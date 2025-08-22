@@ -28,13 +28,13 @@ YEAR = 2025
 SEASONS = [f"{YEAR}", f"{YEAR}/{YEAR+1}"]
 INT = ['INT, INT-2']
 
-teams = list(collection.find({'general.league': {"$nin": INT}, 'general.season': {"$in": SEASONS}}).distinct('teams.home.name'))
+teams = list(collection.find({'general.country': {"$nin": INT}, 'general.season': {"$in": SEASONS}}).distinct('teams.home.name'))
 
 #function to collect league names
 @st.cache_data(ttl='12h', show_spinner=False)
 def get_leagues_data(seasons: list, exclude: Union[list, None]) -> list:
     leagues_data = {}
-    leagues = list(collection.find({'general.league': {"$nin": exclude}, 'general.season': {"$in": seasons}}, {'_id': 0, 'general': 1}))
+    leagues = list(collection.find({'general.country': {"$nin": exclude}, 'general.season': {"$in": seasons}}, {'_id': 0, 'general': 1}))
     for league in leagues:
         title  = f"{league['general']['country']} - {league['general']['league']} - Season {league['general']['season']}"
         if title not in leagues_data.keys():
