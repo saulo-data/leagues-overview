@@ -28,7 +28,7 @@ YEAR = 2025
 SEASONS = [f"{YEAR}", f"{YEAR}/{YEAR+1}"]
 INT = ['INT', 'INT-2']
 
-teams = list(collection.find({'general.country': {"$nin": INT}, 'general.season': {"$in": SEASONS}}).distinct('teams.home.name'))
+#teams = list(collection.find({'general.country': {"$nin": INT}, 'general.season': {"$in": SEASONS}}).distinct('teams.home.name'))
 
 #function to collect league names
 @st.cache_data(ttl='12h', show_spinner=False)
