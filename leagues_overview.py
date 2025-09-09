@@ -210,7 +210,6 @@ with st.sidebar:
     st.write("This Web App was designed in order to observe how teams are performing in their national leagues regarding xG Open Play Per 100 Passes (current season). If you want to have more details about these matches, other stats, other seasons or believe I can help you in your project, send an email to saulo.foot@gmail.com. I'm always open to work.")
 
     st.subheader("My links (pt-br)")
-    st.link_button("Aposta Consciente", "https://apostaconsciente.hotmart.host/product-page-88be95cc-1892-4fa6-b364-69a271150f8f", use_container_width=True)
     st.link_button("Instagram", "https://www.instagram.com/saulo.foot/", use_container_width=True)
     st.link_button("X", "https://x.com/fariasaulo_", use_container_width=True)
     st.link_button("Youtube", "https://www.youtube.com/channel/UCkSw2eyetrr8TByFis0Uyug", use_container_width=True)
