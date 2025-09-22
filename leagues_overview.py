@@ -170,7 +170,6 @@ def get_team(season: str, country: str, league: str, teams: list) -> None:
     esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d["diff"] <= 0]
 
     fig2, ax2 = plt.subplots(figsize=(30, 12))
-    fig3, ax3 = plt.subplots(figsize=(30, 12))
 
     degrees = nx.degree(G)
     pos = nx.kamada_kawai_layout(G)
