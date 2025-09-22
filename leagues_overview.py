@@ -195,16 +195,6 @@ def get_team(season: str, country: str, league: str, teams: list) -> None:
     fig2.patch.set_facecolor(background)
     ax2.patch.set_facecolor(background)
 
-    fig3.patch.set_facecolor(background)
-    ax3.patch.set_facecolor(background)
-    ax3.spines['top'].set_visible(False)
-    ax3.spines['right'].set_visible(False)
-    ax3.spines['bottom'].set_color('k')
-    ax3.spines['left'].set_color('k')
-
-    ax3.set_title(f'{st.session_state['squad']} xG Open Play per 100 Passes Relative For and Against')
-    ax3.plot(x=df2['Round'], y=df2['xG Open Play Per 100 Passes For'], color='g')
-
     df3 = df2.copy()
     df3['Formation Opp'] = df3['Formation Opp'].str.replace('*', '')
 
@@ -214,7 +204,6 @@ def get_team(season: str, country: str, league: str, teams: list) -> None:
     st.write('This Graph is based on xG Open Play per 100 Passes Difference Average')
 
     st.pyplot(fig2)
-    st.pyplot(fig3)
 
 with st.sidebar:
     st.image('static/image.png', 
