@@ -99,7 +99,7 @@ def get_data(league: str, season: str, country: str, teams: list) -> pd.DataFram
     return df
 
 #function get images
-@st.cache_data(ttl='30d', show_spinner=False)
+@st.cache_data(ttl='12h', show_spinner=False)
 def get_image(path):
     resp = urlopen(path)
     image = Image.open(resp)
